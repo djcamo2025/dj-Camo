@@ -49,7 +49,7 @@ body {
     background: linear-gradient(to bottom, #001653, #64005b 70%, #001653);
     margin: 0rem;
     padding: 0rem;
-    min-height: 800vh;
+    min-height: 100vh;
 
 }
 
@@ -167,8 +167,7 @@ footer {
     background-color: #002233;
     color: white;
     text-align: center;
-    padding: 0.625rem;
-    position: fixed;
+    padding-top:  0rem;
     width: 100%;
     bottom: 0;
 }
@@ -212,4 +211,7 @@ footer {
         margin: 0.5rem;
     }
 }
+
+
+
 
