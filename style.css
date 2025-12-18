@@ -3,13 +3,14 @@ nav ul {
   padding: 1rem; /* fixed unit */
   margin-top: 0rem;
   text-align: center;
+  background-color: #002233;
+  margin-top: 0px;
 
 }
 
 nav ul li {
   display: inline-block;
   margin: 0rem;
-  
 }
 
 nav ul li a {
@@ -19,8 +20,9 @@ nav ul li a {
                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
   background-color: #1e1e1e;
-  border-radius: 1.25rem;
+  border-radius: 0.25rem;
   padding: 0.5rem 1rem;
+
 
   /* 👇 Add transition for both color and font-size */
   transition: color 0.3s ease, font-size 0.3s ease;
@@ -40,28 +42,95 @@ nav ul li a:hover {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #001653, #00144b );
+    background: linear-gradient(to bottom, #001653, #64005b 70%, #001653);
     margin: 0rem;
     padding: 0rem;
-    min-height: 300vh;
+    min-height: 800vh;
 }
 
 .topbar {
-    background-color: #1e1e1e;
+    background-color: #191919;
     color: white;
-    padding: 0.625rem;
+    padding-top: 0rem;
     text-align: center;
-    height: 1.25rem;
+    height: 2rem;
     width: 100%;
 }
 
+/*        Text        */
+
+
+
 h1 {
-    font-size: 1.375rem;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
     margin: 0;
+    padding-top: 0.2rem;
 }
 
+h2 {
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+
+
+
+/*        Boxes        */
+
+
+.Box1 {
+    border: 0.225rem solid #6a00bb;
+    border-radius: 0.625rem;
+    padding: 1rem;
+    margin: 5rem;
+    height: 40rem;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 6.625rem rgba(179, 0, 164, 0.5);
+}
+
+
+.Box2 {
+    border: 0.225rem solid #0076bb;
+    border-radius: 0.625rem;
+    padding: 1rem;
+    margin: 5rem;
+    height: 40rem;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 6.625rem #0076bb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*        Footer        */
 
 
 
@@ -77,50 +146,3 @@ footer {
     bottom: 0;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .topbar {
-        padding: 0.9375rem;
-        height: auto;
-    }
-
-    h1 {
-        font-size: 1.125rem;
-    }
-
-    nav ul {
-        text-align: center;
-        padding: 0.5rem;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 0.3125rem 0;
-    }
-
-    footer {
-        padding: 0.9375rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .topbar {
-        padding: 1.25rem;
-    }
-
-    h1 {
-        font-size: 1rem;
-    }
-
-    nav ul {
-        padding: 1rem;
-    }
-
-    nav ul li {
-        margin: 0.625rem 0;
-    }
-
-    footer {
-        padding: 1.25rem;
-    }
-}
