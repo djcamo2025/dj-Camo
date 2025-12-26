@@ -28,12 +28,12 @@ const countdownFunction = setInterval(() => {
 
 
 // Set the release date
-const xmasday = new Date("Dec 25, 2025 0:00:00").getTime();
+const newyear = new Date("Jan 1, 2026 0:00:00").getTime();
 
 // Update countdown every second
 const xmasfunc = setInterval(() => {
     const now = new Date().getTime();
-    const distance = xmasday - now;
+    const distance = newyear - now;
 
     // Time calculations
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -42,35 +42,17 @@ const xmasfunc = setInterval(() => {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display result
-    document.getElementById("xmascountdown").innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    document.getElementById("newyear").innerHTML =
+        `New Year In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 
     // If countdown finished
     if (distance < 0) {
         clearInterval(xmasfunc);
-        document.getElementById("countdown").innerHTML = "Released!";
+        document.getElementById("newyear").innerHTML = "Happy New Year!";
     }
 }, 1000);
 
 
 
-document.getElementById("infobutt").addEventListener("click", function() {
-    alert("Song: Hold My Hand (Before i go) [AI Version]\nArtist: DJ Camo\nRelease Date: 01/01/2026\nDescription: An AI-generated version of the popular song 'Hold My Hand' by Before i go, reimagined by DJ Camo.");
-});
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("snow-audio");
-
-    // Start muted to bypass autoplay restrictions
-    audio.muted = true;
-    audio.play().then(() => {
-        // Unmute after playback starts
-        setTimeout(() => {
-            audio.muted = false;
-        }, 500);
-    }).catch(err => {
-        console.log("Autoplay blocked:", err);
-    });
-});
