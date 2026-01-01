@@ -65,6 +65,7 @@ nav ul li a:hover {
 
 .songPre {
     margin: auto;
+    box-shadow: 0px 0px 6.625rem #bb4e00;
 }
 
 font-face {
@@ -218,7 +219,7 @@ h4 {
 
 
 
-.Box1:hover, .Box2:hover, .Box3:hover {
+.Box1:hover, .Box2:hover, .Box3:hover, .songPre:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
 }
