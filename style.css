@@ -327,6 +327,7 @@ border: #0026a4 0.125rem solid;
 }
 
 
+
 nav ul {
   list-style: square;
   padding-left: 0p; /* fixed unit */
@@ -438,8 +439,13 @@ h1 {
     text-align: center;
 
 }
+h3 {
+    font-size: 1.5rem;
+    margin: auto;
+    padding-bottom: 20px;
 
 
 }
 
 
+}
