@@ -337,18 +337,17 @@ nav ul {
 }
 
 h4 {
-    font-size: 1.25rem;
-    padding-left:3rem;
-    margin-right: 50px;
-    display: none;
+    font-size: 1.01rem;
+    padding-left: 0rem;
+    margin: auto;
 
 }
 
 .Box2 {
     border: 0.225rem solid #bb4e00;
     border-radius: 0.625rem;
-    width: 60%;
-    margin-left: 54px;
+    width: 70%;
+    margin: auto;
     min-height: 10rem;
     box-shadow: 0px 0px 6.625rem #bb4e00;
     background-color: #64005b;
@@ -358,8 +357,8 @@ h4 {
 .Box1 {
     border: 0.225rem solid #1483d8;
     border-radius: 0.625rem;
-     width: 60%;
-    margin-left: 54px;
+    width: 70%;
+    margin: auto;
     min-height: 10rem;
     box-shadow: 0px 0px 6.625rem rgb(55, 0, 150);
 }
@@ -369,8 +368,9 @@ h4 {
     border: 0.225rem solid #00c3ff;
     border-radius: 0.625rem;
     padding: 1rem;
-    margin-left: 54px;
-    width: 60%;
+        width: 70%;
+    margin: auto;
+    width: 70%;
     min-height: 14rem;
 
 
