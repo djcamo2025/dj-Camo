@@ -45,6 +45,28 @@ nav ul li a:hover {
   
 }
 
+.SongLink {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 19px;
+    background: #bf00ff;
+    height: 25px;
+    width: 100px;
+    margin: auto;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.SongLink:hover {
+    background: #ff00f7;
+    box-shadow: 0px 0px 6.3125rem rgb(255, 0, 231);
+}
+
+.songPre {
+    margin: auto;
+}
+
 font-face {
     font-family: 'CustomFont';
     src: url('fonts/CustomFont.woff2') format('woff2'),
