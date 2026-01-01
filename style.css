@@ -10,6 +10,13 @@ nav ul {
 }
 
 
+.BDAY {
+    color: #a4008b;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 7px;
+}
+
 
 nav ul li {
   display: inline-block;
@@ -44,6 +51,28 @@ font-face {
          url('fonts/CustomFont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+
+.soundfxButton {
+    background-color: rgb(30, 0, 255);
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 43%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    box-shadow: 0 0 12px rgba(30, 0, 255, 0.7);
+}
+
+.soundfxButton.playing {
+    transform: scale(0.98);
+    box-shadow: 0 0 18px rgba(164,0,139,0.9);
+    background-color: #00e5d4;
 }
 
 
@@ -116,11 +145,7 @@ h4 {
     border-radius: 200px;
 }
 
-.newyears {
-    font-size: 30px;
-    color: gold;
-    margin-left: 34%;
-}
+
 
 
 
@@ -132,6 +157,7 @@ h4 {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 6rem;
+    margin-top: 30px;
 }
 
 
@@ -282,11 +308,7 @@ footer {
     color: lightgrey;
 }
 
-button {
-    display: flex;
-    align-items: start;
-    background-color: #42a3ff;
-}
+
 
     nav ul li a {
   color: rgb(255, 255, 255);
@@ -334,12 +356,12 @@ h4 {
 }
 
 .Box1 {
-    border: 0.225rem solid #6a00bb;
+    border: 0.225rem solid #1483d8;
     border-radius: 0.625rem;
      width: 60%;
     margin-left: 54px;
     min-height: 10rem;
-    box-shadow: 0px 0px 6.625rem rgba(179, 0, 164, 0.5);
+    box-shadow: 0px 0px 6.625rem rgb(55, 0, 150);
 }
 
     
@@ -393,17 +415,31 @@ h1 {
     border: 2px solid rgb(0, 121, 207);
 }
 
-.newyears {
-    font-size: 30px;
-    color: gold;
-    margin-left: 24%;
+.BDAY {
+    color: #a4008b;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.soundfxButton {
+    background-color: rgb(30, 0, 255);
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 35%;
+    box-shadow: 0 0 12px rgba(30, 0, 255, 0.7);
+    padding-top: 9PX;
+    margin-bottom: 30px;
+    text-align: center;
+
 }
 
 
-
-
-
 }
 
 
- 
