@@ -1,6 +1,6 @@
 
 // Set the release date
-const releaseDate = new Date("Jan 1, 2026 0:00:00").getTime();
+const releaseDate = new Date("Jan 19, 2026 0:00:00").getTime();
 
 // Update countdown every second
 const countdownFunction = setInterval(() => {
