@@ -20,8 +20,10 @@ const countdownFunction = setInterval(() => {
     // If countdown finished
     if (distance < 0) {
         clearInterval(countdownFunction);
+        document.getElementById("playSoundBtn").style.display = "none";
         document.getElementById("countdown").innerHTML = "Released!";
         document.getElementById("NR").innerHTML = "Latest Release!";
+        document.getElementById("Infomesg").style.display = "none";
     }
 }, 1000);
 
