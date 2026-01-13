@@ -10,42 +10,41 @@
 </head>
 <body>
 
-    
     <div class="topcontainer">
     <div class="topbar">
         <h1>DJ Camo Official</h1>
 
         <div class="nav">
             <ul>
-                <li><a href="#home" class="activepage">Home</a></li>
-                <li><a href="/music/">Music</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/music">Music</a></li>
+                <li><a href="/Contact" class="activepage" >Contact</a></li>
             </ul>
         </div>
     </div>
 </div>
 
+
 <div class="warning-box">
-    <p class="warntext">This site is on its Public Beta Program, and will contain bugs and incomplete features.</p>
+    <p class="warntext">Contact form system is not funcanl at this time, check later!</p>
 </div>
 
+<section class="contact-section">
+  <h2>Contact Me</h2>
 
-<div class="grid-container">
+  <form class="contact-form" action="#" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
 
-        <div class="content1">
-        <h1>Upcoming Release</h1>
-        <img src="/Love M.jpg" alt="">
-        <h2>Love Me </h2>
-        <h3 id="date" >01/19/26</h3>
-        <h3  id="countdown" >Waiting for server...</h3>
-    </div>
-</div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-
-
-
-
+    <button type="submit" class="contact-btn">Send Message</button>
+  </form>
+</section>
 
 <footer>
     <p>&copy; 2026 DJ Camo Official. All rights reserved.</p>
