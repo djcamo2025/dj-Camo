@@ -1,0 +1,286 @@
+body {
+    height: auto;
+    background: rgb(24, 24, 24);
+    margin: 0;
+}
+
+.topcontainer {
+    width: 100%;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    background: rgba(24, 24, 24, 0.889);
+    backdrop-filter: blur(100px);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* Top bar */
+.topbar {
+    padding: 20px;
+    text-align: center;
+
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg,  #0008ff, #ffffff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    border-radius: 10px;
+    animation: gradientScroll 6s ease infinite;
+}
+
+@keyframes gradientScroll {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Navigation bar */
+.nav {
+    margin-top: 20px;   /* FIXED */
+    background: white;
+    background: transparent;
+    background: rgba(255, 255, 255, 0.361);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.641);
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* centers menu items */
+    gap: 30px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+     font-size: clamp(1.9rem, 5vw, 0.rem);
+    padding: 15px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #6ad5ff;
+    font-weight: bold;
+}
+
+.activepage {
+    text-decoration: underline white;
+    font-weight: bold; /* optional: makes it pop */
+}
+
+
+
+
+
+
+
+
+/* Content area */
+
+.content1 {
+    margin: 40px auto;
+    width: 80%;
+    height: fit-content;
+    max-width: 80%;
+    background: #222222;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Make images scale properly */
+img {
+    width: 100%;
+    max-width: 600px;   /* optional: keeps it from getting too huge on desktop */
+    display: block;
+    margin: 20px auto;  /* centers the image */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Mobile scaling */
+@media (max-width: 700px) {
+    .content1 {
+        width: 90%;      /* fills more of the screen */
+        padding: 20px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        margin: 15px auto;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 10px;
+    }
+    
+}
+
+
+
+
+/* Text styles */
+
+h1 {
+    margin-top: 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+h2 {
+    margin-top: 0;
+    color: #dddddd;
+    text-align: center;
+    font-size: 40px;
+    
+}
+h3 {
+    margin-top: 0;
+    color: #aaaaaa;
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222222;
+    color: #888888;
+}
+
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #888888;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  text-align: left;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #222;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: #2d2d2d;
+  box-shadow: 0 0 0 2px #555;
+}
+
+.contact-btn {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #ff0055;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact-btn:hover {
+  background: #ff3377;
+}
+
+
+
+.warning-box {
+    margin: 20px auto;
+    width: fit-content;
+    max-width:400px;
+    border-radius: 15px;
+    background: rgba(0, 255, 174, 0.394);
+
+}
+
+.warntext {
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+}
