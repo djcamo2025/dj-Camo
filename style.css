@@ -10,11 +10,9 @@ body {
     font-family: Arial, sans-serif;
     position: sticky;
     top: 0;
-    background: transparent;
-    background: rgba(24, 24, 24, 0.889);
-    backdrop-filter: blur(100px);
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    backdrop-filter: blur(4px);
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
 }
 
 /* Top bar */
@@ -44,15 +42,23 @@ body {
 }
 /* Navigation bar */
 .nav {
-    margin-top: 20px;   /* FIXED */
-    background: white;
-    background: transparent;
-    background: rgba(255, 255, 255, 0.361);
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
-    border: 1px solid rgba(128, 128, 128, 0.641);
-    display: inline-block;
-    padding: 0px 20px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.608);
+  backdrop-filter: blur(4px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.321);
+  display: inline-block;
+  padding: 0px 20px;
+
+
+  transition: 
+    transform 0.35s cubic-bezier(0.25, 1.25, 0.5, 1.1),
+    padding 0.35s cubic-bezier(0.25, 1.25, 0.5, 1.1);
+}
+
+.nav:hover {
+  transform: scale(1.12) skewX(1deg);
+  padding: 0px 26px; /* slight horizontal stretch */
 }
 
 .nav ul {
@@ -74,7 +80,6 @@ body {
 }
 
 .nav ul li a:hover {
-    color: #6ad5ff;
     font-weight: bold;
 }
 
@@ -97,9 +102,9 @@ body {
     width: 80%;
     height: fit-content;
     max-width: 80%;
-    background: #222222;
     padding: 30px;
     border-radius: 15px;
+    background: rgb(16, 17, 17);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
@@ -256,11 +261,12 @@ footer {
   padding: 14px;
   border: none;
   border-radius: 8px;
-  background: #ff0055;
-  color: white;
+  background: rgba(255, 255, 255, 0.85);
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   cursor: pointer;
   transition: 0.2s;
+  backdrop-filter: blur();
 }
 
 .contact-btn:hover {
@@ -271,7 +277,7 @@ footer {
 
 .warning-box {
     margin: 20px auto;
-    width: fit-content;
+    width: auto;
     max-width:400px;
     border-radius: 15px;
     background: rgba(0, 255, 174, 0.394);
