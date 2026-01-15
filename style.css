@@ -11,8 +11,7 @@ body {
     position: sticky;
     top: 0;
     backdrop-filter: blur(4px);
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    z-index: 01;
 }
 
 /* Top bar */
@@ -24,9 +23,9 @@ body {
 
 .topbar h1 {
     margin: 0;
-    font-size: 32px;
+    font-size: 24px;
     letter-spacing: 2px;
-    background: linear-gradient(90deg,  #0008ff, #ffffff);
+    background: linear-gradient(90deg,  #ff9100, #ffdfc5);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,7 +44,7 @@ body {
   margin-top: 20px;
   background: rgba(255, 255, 255, 0.608);
   backdrop-filter: blur(4px);
-  border-radius: 30px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.321);
   display: inline-block;
   padding: 0px 20px;
@@ -89,13 +88,8 @@ body {
 }
 
 
-
-
-
-
-
-
 /* Content area */
+
 
 .content1 {
     margin: 40px auto;
@@ -104,8 +98,26 @@ body {
     max-width: 80%;
     padding: 30px;
     border-radius: 15px;
-    background: rgb(16, 17, 17);
+    background: rgba(70, 131, 222, 0.415);
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.presavelink {
+    background: #5c05c7;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    border-radius: 20px;
+    display: block;          /* makes the whole area clickable */
+    text-decoration: none;   /* removes underline */
+    color: white;            /* ensures text stays visible */
+    padding: 8px 0;          /* gives the block breathing room */
+}
+
+.presavefont {
+    font-size: 20px;
+    padding: 4px;
+    margin: 0;               /* removes default h1 spacing */
 }
 
 /* Make images scale properly */
@@ -155,14 +167,14 @@ h2 {
     margin-top: 0;
     color: #dddddd;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     
 }
 h3 {
     margin-top: 0;
     color: #aaaaaa;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     
 }
 
@@ -276,7 +288,7 @@ footer {
 
 
 .warning-box {
-    margin: 20px auto;
+    margin: 0px auto;
     width: auto;
     max-width:400px;
     border-radius: 15px;
@@ -290,3 +302,5 @@ footer {
     font-size: 15px;
     border-radius: 10px;
 }
+
+
