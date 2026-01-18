@@ -4,60 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ Camo Official - Music</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
     <div class="topcontainer">
-    <div class="topbar">
-        <h1>DJ Camo Official</h1>
-
-        <div class="nav">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/music" class="activepage">Music</a></li>
-                <li><a href="/Contact/">Contact</a></li>
-            </ul>
+        <div class="topbar">
+            <h1>DJ Camo Official</h1>
+            <button class="burger-btn" id="burgerBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="navMenu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/music/" class="activepage">Music</a></li>
+                    <li><a href="/Contact/">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
-</div>
 
-<div class="grid-container">
-
+    <div class="grid-container">
         <div class="content1">
-        <h1>Upcoming Release</h1>
-        <img src="/Love M.jpg" alt="">
-        <h2>Love Me </h2>
-        <h3 id="date" >01/19/26</h3>
-
+            <h1 id="title">Upcoming Release</h1>
+            <img src="/Love M.jpg" alt="Love Me album cover">
+            <h2>Love Me</h2>
+            <h3 id="date">Checking date...</h3>
+            <h3 id="countdown">Checking date...</h3>
+            <a href="https://ditto.fm/love_me_cdfc34f4" class="presavelink" id="prelink">
+                <h1 class="presavefont" id="prelink" >Pre-Save Song</h1>
+            </a>
+        </div>
     </div>
-</div>
 
+    <footer>
+        <p>&copy; 2026 DJ Camo Official. All rights reserved.</p>
+        <p>Follow us on social media:</p>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@djcamo_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@DJ-CAMO-official" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://open.spotify.com/artist/67TZUPh1VJNUY0MWWDGgV7?si=4pBIo9crRmqENvwsTQ9oLQ" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+        </div>
+    </footer>
 
-
-
-
-
-
-<footer>
-    <p>&copy; 2026 DJ Camo Official. All rights reserved.</p>
-    social media links:
-
-
-
-    <div class="social-icons">
-                <a href="https://www.tiktok.com/@djcamo_" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.youtube.com/@DJ-CAMO-official" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://open.spotify.com/artist/67TZUPh1VJNUY0MWWDGgV7?si=4pBIo9crRmqENvwsTQ9oLQ" target="_blank"><i class="fab fa-spotify"></i></a>
-    </div>
-</footer>
-
-</footer>
-
-
-
-
+    <script src="/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
 </body>
 </html>

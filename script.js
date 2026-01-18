@@ -1,10 +1,76 @@
+// Burger Menu Toggle
+const burgerBtn = document.getElementById('burgerBtn');
+const navMenu = document.getElementById('navMenu');
+
+if (burgerBtn && navMenu) {
+    burgerBtn.addEventListener('click', () => {
+        burgerBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.topbar')) {
+            burgerBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
+
 // Set the release date
-const releaseDate = new Date("Jan 19, 2026 00:00:00");
+const releaseDate = new Date("Jan 19, 2026 00:00:05");
 
 // Update countdown every second
 const countdownFunction = setInterval(() => {
     const now = new Date().getTime();
     const distance = releaseDate.getTime() - now;
+
+    // Grab elements once per tick
+    const dateElement = document.getElementById("date");
+    const countdownElement = document.getElementById("countdown");
+    const titleElement = document.getElementById("title");
+    const presaveLink = document.getElementById("presavelink");
+    const nextrelease = document.getElementById("nextrel");
+    const presavelink = document.getElementById("prelink")
+
+    // If countdown finished
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+
+        if (countdownElement) countdownElement.innerHTML = "Released!";
+        if (titleElement) titleElement.innerHTML = "Latest Release!";
+        if (presaveLink) presaveLink.style.display = "none";
+        if (nextrelease) nextrelease.innerHTML = "No upcoming release.";
+        if (dateElement) dateElement.innerHTML = "Release is out now!";
+        if (presavelink) presavelink.style.display = "none"
+
+        // 🎉 CONFETTI CELEBRATION
+        confetti({
+            particleCount: 200,
+            spread: 90,
+            origin: { y: 0.6 }
+        });
+
+        // Optional: extra bursts for a bigger celebration
+        setTimeout(() => confetti({ particleCount: 120, spread: 100 }), 300);
+        setTimeout(() => confetti({ particleCount: 150, spread: 120 }), 600);
+
+        return; // Prevents old text from updating
+    }
+
+    // Only runs while counting down
+    if (dateElement) {
+        dateElement.innerHTML = "Next Release: " + releaseDate.toDateString();
+    }
 
     // Time calculations
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -12,19 +78,10 @@ const countdownFunction = setInterval(() => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Display readable date
-    document.getElementById("date").innerHTML =
-        "Next Release: " + releaseDate.toDateString();
-
     // Display countdown
-    document.getElementById("countdown").innerHTML =
-        `Releases in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-    // If countdown finished
-    if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "Released!";
-        document.getElementById("title").innerHTML = "Latest Release!";
-        document.getElementById("presavelink").style.display = "none"
+    if (countdownElement) {
+        countdownElement.innerHTML =
+            `Releases in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
+
 }, 1000);

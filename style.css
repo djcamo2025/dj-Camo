@@ -1,7 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: auto;
     background: rgb(24, 24, 24);
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
 }
 
 .topcontainer {
@@ -25,7 +32,7 @@ body {
     margin: 0;
     font-size: 24px;
     letter-spacing: 2px;
-    background: linear-gradient(90deg,  #ff9100, #ffdfc5);
+    background: linear-gradient(90deg,  #ffffff);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -42,22 +49,20 @@ body {
 /* Navigation bar */
 .nav {
   margin-top: 20px;
-  background: rgba(255, 255, 255, 0.608);
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.321);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4);
   display: inline-block;
-  padding: 0px 20px;
-
-
-  transition: 
-    transform 0.35s cubic-bezier(0.25, 1.25, 0.5, 1.1),
-    padding 0.35s cubic-bezier(0.25, 1.25, 0.5, 1.1);
+  padding: 12px 32px;
+  transition: all 0.35s cubic-bezier(0.25, 1.25, 0.5, 1.1);
 }
 
 .nav:hover {
-  transform: scale(1.12) skewX(1deg);
-  padding: 0px 26px; /* slight horizontal stretch */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.5);
+
 }
 
 .nav ul {
@@ -65,26 +70,153 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* centers menu items */
-    gap: 30px;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
 }
 
 .nav ul li a {
     color: white;
     text-decoration: none;
-     font-size: clamp(1.9rem, 5vw, 0.rem);
-    padding: 15px 0;
+    font-size: 1.05rem;
+    padding: 8px 12px;
     display: block;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
 }
 
 .nav ul li a:hover {
-    font-weight: bold;
+    color: #ffdfc5;
+    transform: translateY(-2px);
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff9100, #ffdfc5);
+    transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
 }
 
 .activepage {
-    text-decoration: underline white;
-    font-weight: bold; /* optional: makes it pop */
+    color: #ffffff;
+}
+
+.activepage::after {
+    width: 100%;
+}
+
+/* Burger Menu */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+}
+
+.burger-btn span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.burger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.burger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Mobile responsive nav */
+@media (max-width: 700px) {
+    .burger-btn {
+        display: flex;
+    }
+
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .topbar h1 {
+        flex: 1;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgb(37, 37, 37);
+        backdrop-filter: blur(12px);
+        border-radius: 0;
+        border: none;
+  
+        padding: 0;
+        margin-top: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        display: flex;
+    }
+
+    .nav.active {
+        max-height: 300px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav ul li a {
+        padding: 16px 20px;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .nav ul li a::after {
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 145, 0, 0.1);
+        z-index: -1;
+    }
+
+    .nav ul li a:hover::after {
+        width: 100%;
+    }
 }
 
 
@@ -98,26 +230,42 @@ body {
     max-width: 80%;
     padding: 30px;
     border-radius: 15px;
-    background: rgba(70, 131, 222, 0.415);
+    background: rgb(24, 24, 24);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.5s ease-in-out; /* smooth hover animation */
 }
+
+.content1:hover {
+    transform: translateY(-7px); /* moves the card upward */
+}
+
 .presavelink {
-    background: #5c05c7;
+    background: linear-gradient(135deg, #5c05c7, #7d1aff);
     text-align: center;
     width: 60%;
-    margin: auto;
-    border-radius: 20px;
-    display: block;          /* makes the whole area clickable */
-    text-decoration: none;   /* removes underline */
-    color: white;            /* ensures text stays visible */
-    padding: 8px 0;          /* gives the block breathing room */
+    max-width: 300px;
+    margin: 30px auto;
+    border-radius: 12px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(92, 5, 199, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.presavelink:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(92, 5, 199, 0.5);
 }
 
 .presavefont {
-    font-size: 20px;
-    padding: 4px;
-    margin: 0;               /* removes default h1 spacing */
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
 }
 
 /* Make images scale properly */
@@ -131,9 +279,14 @@ img {
 }
 
 /* Mobile scaling */
+.grid-container {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 700px) {
     .content1 {
-        width: 90%;      /* fills more of the screen */
+        width: 90%;
         padding: 20px;
     }
 
@@ -144,10 +297,13 @@ img {
         border-radius: 10px;
     }
 
-    h2 {
-        font-size: 10px;
+    .presavelink {
+        width: 100%;
     }
     
+    .topbar h1 {
+        font-size: 20px;
+    }
 }
 
 
@@ -156,26 +312,27 @@ img {
 /* Text styles */
 
 h1 {
-    margin-top: 0;
+    margin: 0.5em 0;
     color: #ffffff;
     text-align: center;
-    font-size: 40px;
-    
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 700;
 }
 
 h2 {
-    margin-top: 0;
+    margin: 0.6em 0;
     color: #dddddd;
     text-align: center;
-    font-size: 30px;
-    
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
 }
+
 h3 {
-    margin-top: 0;
+    margin: 0.5em 0;
     color: #aaaaaa;
     text-align: center;
-    font-size: 25px;
-    
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 500;
 }
 
 
@@ -270,37 +427,44 @@ footer {
 }
 
 .contact-btn {
-  padding: 14px;
+  padding: 14px 24px;
   border: none;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.85);
-  color: rgb(255, 255, 255);
+  background: linear-gradient(135deg, #5c05c7, #7d1aff);
+  color: white;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.2s;
-  backdrop-filter: blur();
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(92, 5, 199, 0.3);
 }
 
 .contact-btn:hover {
-  background: #ff3377;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(92, 5, 199, 0.5);
 }
 
 
 
 .warning-box {
-    margin: 0px auto;
-    width: auto;
-    max-width:400px;
-    border-radius: 15px;
-    background: rgba(0, 255, 174, 0.394);
-
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    background: rgba(0, 255, 174, 0.08);
+    border: 1px solid rgba(0, 255, 174, 0.25);
+    backdrop-filter: blur(4px);
 }
 
 .warntext {
-    color: white;
-    padding: 10px 20px;
-    font-size: 15px;
-    border-radius: 10px;
+    color: #e0e0e0;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    border-radius: 0;
+    margin: 0;
+    line-height: 1.5;
 }
+
+
 
 
