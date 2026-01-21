@@ -448,8 +448,8 @@ footer {
 .warning-box {
     margin: 20px auto;
     width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
+    max-width: 900px;
+    border-radius: 10px;
     background: rgba(0, 255, 174, 0.08);
     border: 1px solid rgba(0, 255, 174, 0.25);
     backdrop-filter: blur(4px);
