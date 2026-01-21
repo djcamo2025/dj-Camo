@@ -27,7 +27,7 @@ if (burgerBtn && navMenu) {
 }
 
 // Set the release date
-const releaseDate = new Date("Jan 19, 2026 00:00:05");
+const releaseDate = new Date("Jan 30, 2026 00:00:05");
 
 // Update countdown every second
 const countdownFunction = setInterval(() => {
