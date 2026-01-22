@@ -15,6 +15,11 @@
 
     <div class="topcontainer">
         <div class="topbar">
+            <div class="live-mini" title="Live users">
+  <span class="live-dot"></span>
+  <span class="live-value" id="liveCount">0</span>
+</div>
+
             <h1>DJ Camo Official</h1>
             <button class="burger-btn" id="burgerBtn" aria-label="Toggle menu">
                 <span></span>
@@ -30,6 +35,11 @@
             </nav>
         </div>
     </div>
+
+   
+
+
+
 
 
 
@@ -72,7 +82,10 @@
             <a href="https://www.youtube.com/@DJ-CAMO-official" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="https://open.spotify.com/artist/67TZUPh1VJNUY0MWWDGgV7?si=4pBIo9crRmqENvwsTQ9oLQ" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
         </div>
+        
     </footer>
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="live-users-frontend.js"></script>
 
     <script src="/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

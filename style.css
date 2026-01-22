@@ -467,3 +467,65 @@ footer {
 
 
 
+/* Tiny live indicator for top bar */
+.live-mini{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: inset 0 1px rgba(255,255,255,0.25);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Smaller dot */
+.live-mini .live-dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ffae;
+  box-shadow: 0 0 6px rgba(0,255,174,0.8);
+}
+
+/* Remove pulse on tiny version */
+.live-mini .live-dot::after{
+  display: none;
+}
+
+.live-mini .live-value{
+  min-width: 1.5ch;
+  text-align: center;
+}
+
+/* Position live indicator */
+.topbar{
+  position: relative;
+}
+
+/* Desktop: stick it to the LEFT */
+@media (min-width: 701px){
+  .live-mini{
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Mobile: let layout handle it normally */
+@media (max-width: 700px){
+  .live-mini{
+    position: static;
+    margin-right: 10px;
+  }
+}
