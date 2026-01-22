@@ -498,34 +498,38 @@ footer {
 }
 
 /* Remove pulse on tiny version */
-.live-mini .live-dot::after{
-  display: none;
-}
+.live-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ffae;
 
-.live-mini .live-value{
-  min-width: 1.5ch;
-  text-align: center;
-}
+  /* strong glow */
+  box-shadow:
+    0 0 6px rgba(0, 255, 174, 1),
+    0 0 14px rgba(0, 255, 174, 0.9),
+    0 0 28px rgba(0, 255, 174, 0.6);
 
-/* Position live indicator */
-.topbar{
   position: relative;
 }
 
-/* Desktop: stick it to the LEFT */
-@media (min-width: 701px){
-  .live-mini{
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+/* outer breathing ring */
+.live-dot::after{
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 255, 174, 0.6);
+  animation: livePulse 1.6s ease-out infinite;
 }
 
-/* Mobile: let layout handle it normally */
-@media (max-width: 700px){
-  .live-mini{
-    position: static;
-    margin-right: 10px;
+@keyframes livePulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
   }
 }
