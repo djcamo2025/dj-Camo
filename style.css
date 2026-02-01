@@ -23,28 +23,22 @@ body {
 
 /* Top bar */
 .topbar {
-    padding: 20px;
+    padding: 24px 20px;
     text-align: center;
-
 }
 
 .topbar h1 {
     margin: 0;
-    font-size: 24px;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg,  #ffffff);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    border-radius: 10px;
-    animation: gradientScroll 6s ease infinite;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
-@keyframes gradientScroll {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.topbar h1:hover {
+    text-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
 }
 
 
@@ -60,12 +54,11 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.4);
   display: inline-block;
   padding: 12px 32px;
-  transition: all 0.35s cubic-bezier(0.25, 1.25, 0.5, 1.1);
+  transition: all 0.35s ease;
 }
 
 .nav:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.5);
-
+  box-shadow: 0 16px 48px rgba(125, 26, 255, 0.2), inset 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .nav ul {
@@ -82,17 +75,20 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.05rem;
-    padding: 8px 12px;
+    padding: 10px 14px;
     display: block;
     transition: all 0.3s ease;
     font-weight: 600;
     letter-spacing: 0.5px;
     position: relative;
+    border-radius: 6px;
 }
 
 .nav ul li a:hover {
     color: #ffdfc5;
     transform: translateY(-2px);
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(125, 26, 255, 0.2);
 }
 
 .nav ul li a::after {
@@ -227,27 +223,34 @@ body {
 
 .content1 {
     margin: 40px auto;
-    width: 80%;
+    width: 90%;
+    max-width: 550px;
     height: fit-content;
-    max-width: 80%;
     padding: 30px;
     border-radius: 15px;
     background: rgb(24, 24, 24);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    transition: transform 0.5s ease-in-out; /* smooth hover animation */
+    transition: all 0.4s ease;
+    animation: slideUp 0.6s ease-out;
 }
 
 
 
-
-.gap {
-    padding: 20px;
-    gap:23px;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.content1:hover{
-    transform: translateY(-7px); /* moves the card upward */
+.content1:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 40px rgba(125, 26, 255, 0.3), 0 0 20px rgba(125, 26, 255, 0.2);
 }
 
 .presavelink {
@@ -268,7 +271,7 @@ body {
 
 .presavelink:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(92, 5, 199, 0.5);
+    box-shadow: 0 12px 36px rgba(92, 5, 199, 0.7), 0 0 30px rgba(125, 26, 255, 0.3);
 }
 
 .presavefont {
@@ -281,17 +284,90 @@ body {
 /* Make images scale properly */
 img {
     width: 100%;
-    max-width: 600px;   /* optional: keeps it from getting too huge on desktop */
+    max-width: 100%;
     display: block;
-    margin: 20px auto;  /* centers the image */
+    margin: 20px auto;
     height: auto;
     border-radius: 10px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    object-fit: cover;
+}
+
+.content1:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1);
 }
 
 /* Mobile scaling */
 .grid-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+    animation: containerFade 0.6s ease-out;
+}
+
+@keyframes containerFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Large screen optimization */
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+    
+    .topbar h1 {
+        font-size: 22px;
+    }
+    
+    .content1 {
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 18px;
+    }
+    
+    .presavelink {
+        width: 45%;
+        max-width: 220px;
+        padding: 9px 16px;
+        font-size: 0.85rem;
+        margin: 20px auto;
+    }
+    
+    .presavefont {
+        font-size: 0.85rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+    
+    h3 {
+        font-size: 0.3rem;
+        line-height: 1.5;
+    }
+    
+    img {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 700px) {
