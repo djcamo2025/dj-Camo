@@ -86,3 +86,27 @@ const countdownFunction = setInterval(() => {
 
 }, 1000);
 
+// Center shine effect for music grid items on mobile
+if (window.matchMedia('(max-width: 700px)').matches) {
+    const checkCentered = () => {
+        const gridItems = document.querySelectorAll('.mygrid, .mygridc');
+        
+        gridItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const viewportCenter = window.innerHeight / 2;
+            const itemCenter = rect.top + rect.height / 2;
+            const centerThreshold = 150; // pixels from center
+            
+            // Check if item is centered in viewport
+            if (Math.abs(itemCenter - viewportCenter) < centerThreshold) {
+                item.classList.add('center-shine');
+            } else {
+                item.classList.remove('center-shine');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkCentered);
+    checkCentered(); // Check on initial load
+}
+
